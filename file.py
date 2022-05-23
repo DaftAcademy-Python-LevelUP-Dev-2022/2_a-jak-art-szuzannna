@@ -40,4 +40,9 @@ def format_output(*required_keys):
 
 
 def add_method_to_instance(klass):
-    pass
+    def decorate(func):
+        def wrap(*args, **kwargs):
+            return func()
+        setattr(klass, func.__name__, wrap)
+        return func
+    return decorate
