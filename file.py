@@ -36,7 +36,21 @@ def sums_of_str_elements_are_equal(func):
 
 
 def format_output(*required_keys):
-    pass
+    def outer_func(func):
+        def inner_func(*args, **kwargs):
+            keys = {k: k.split('__') for k in required_keys}
+            input = func(*args, **kwargs)
+            list_of_keys = [item for sublist in keys.values() for item in sublist]
+
+            for k in list_of_keys:
+                if k not in input.keys():
+                    raise ValueError
+
+            formatted_dict = {key: ' '.join([input[v] if input[v] != '' else 'Empty value' for v in value]) for
+                        key, value in keys.items()}
+            return formatted_dict
+        return inner_func
+    return outer_func
 
 
 def add_method_to_instance(klass):
