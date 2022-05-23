@@ -1,7 +1,7 @@
 def greeter(func):
     def say_aloha(*args, **kwargs):
         name = func(*args, **kwargs)
-        name = f"Aloha {result.title()}"
+        name = f"Aloha {name.title()}"
         return name
     return say_aloha
 
