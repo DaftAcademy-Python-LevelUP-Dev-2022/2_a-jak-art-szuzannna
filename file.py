@@ -3,7 +3,7 @@ def greeter(func):
         name = func(*args, **kwargs)
         name = f"Aloha {result.title()}"
         return name
-    return aloha
+    return say_aloha
 
 
 def sums_of_str_elements_are_equal(func):
