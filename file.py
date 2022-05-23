@@ -29,9 +29,9 @@ def sums_of_str_elements_are_equal(func):
             except UnboundLocalError:
                 pass
         if list_of_numbers[0] == list_of_numbers[1]:
-            return "" + list_of_numbers[0]+" == " + list_of_numbers[1]
+            return "" + str(list_of_numbers[0])+" == " + str(list_of_numbers[1])
         else:
-            return "" + list_of_numbers[0]+" != " + list_of_numbers[1]
+            return "" + str(list_of_numbers[0])+" != " + str(list_of_numbers[1])
     return comaprison
 
 
